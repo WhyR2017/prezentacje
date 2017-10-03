@@ -2,18 +2,18 @@
 
 # Wykłady dzień I - 28.09.2017
 
-## Keynotes
+## Keynotes (9:30-10:30)
 
 - [Tomasz Burzykowski: Why (sometimes) R?](https://github.com/whyRconf/prezentacje/tree/master/01_keynotes/1.pdf)
 - [Ewa Szczurek: BioinfoRmatyka nowotworów](https://github.com/whyRconf/prezentacje/tree/master/01_keynotes/2.pdf)
 
-## PwC Data Analytics
+## PwC Data Analytics (11:00-12:30)
 
 - [Paweł Pitera: Logistyka i Supply Chain Management z wykorzystaniem R](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/1.pptx)
 - [Michał Cisek, Rafał Kobiela: Rozpraszanie wielowątkowe na przykładzie analizy transkacji w Retailu](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/2.pdf)
 - [Katarzyna	Lenczewska, Ewelina	Chmura: Wykorzystanie R w rozwiązywaniu problemów biznesowych w branży finansowej]()
 
-## Tidyverse
+## Tidyverse (11:00-12:30)
 
 - [Olga Mierzwa-Sulima: Jak zbudowaliśmy aplikację Shiny dedykowaną 700 użytkownikom?](https://github.com/whyRconf/prezentacje/tree/master/03_Tidyverse/1.pdf)
 - [Błażej Kochański: Jak wygrać więcej w lotto?](https://github.com/whyRconf/prezentacje/tree/master/03_Tidyverse/2.pdf)
@@ -21,16 +21,27 @@
 - [Natalia Potocka: Blog z RMarkdownem i blogdownem](https://potockan.github.io/whyr2017/#/)
 - [Piotr Sobczyk: 10 trików dla wizualizacji w ggplot2](https://rawgit.com/whyRconf/prezentacje/master/03_Tidyverse/5/index.html)
 
-## Keynotes
+## Keynotes (12:30-13:30)
 
 [Wit Jakuczun: R jako główna platforma do zaawansowanej analityki w Enterprise](https://github.com/whyRconf/prezentacje/tree/master/04_keynotes/1.pdf)
 [Artur Suchwałko: Jak dużo mocy (i po co) można wycisnąć z modelu predykcyjnego?](https://github.com/whyRconf/prezentacje/tree/master/04_keynotes/2.pdf)
 
-## Modelowanie Ryzyka (UBS)
+## Modelowanie Ryzyka (UBS) (14:30-16:00)
 
-- []()
-- []()
-- []()
+- [Adam Wróbel: Agregacja rozkładów - Wykorzystanie kopuł](https://github.com/whyRconf/prezentacje/tree/master/05_Modelowanie_Ryzyka_UBS/1.pdf)
+- [Stanisław Ochotny: Modelowanie ryzyka kredytowego - Wykorzystanie panelowej regresji liniowej](https://github.com/whyRconf/prezentacje/tree/master/05_Modelowanie_Ryzyka_UBS/2.pdf)
+- [Dorota Kowalczyk: Modelowanie ryzyka niespłacalności - Zastosowanie analizy szeregów czasowych](https://github.com/whyRconf/prezentacje/tree/master/05_Modelowanie_Ryzyka_UBS/3.pdf)
+
+## Statystyka (14:30-16:00)
+
+- [Piotr Wójcik: Modelowanie dynamiki rozkładu w R. Zastosowanie do analizy konwergencji na poziomie lokalnym](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/1.pdf)
+- [Błażej Kochański: Jak więcej wygrać w lotto z R?](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/2.pdf)
+- [Tomasz Melcer: zastępstwo i prezentacja na tablicy na temat funkcji kosztu]
+- [Krzysztof Słomczyński: FSelectorRcpp entropy-based feature selection algorithms with sparse matrix support](https://rawgit.com/whyRconf/prezentacje/master/06_Statystyka/4.html)
+- [Łukasz Grala: Analiza sentymentu przy użyciu bibliotek Microsoft]()
+
+## Keynotes (16:30-17:30)
+
 
 # Wykłady dzień II - 29.09.2017
 
@@ -38,6 +49,7 @@
 # Keynotes
 
 - [Anna Wróblewska: Analiza danych obserwacyjnych zwiedzających wystawy w Centrum Nauki Kopernika ](https://docs.google.com/presentation/d/1Lb5YqAGBVuLT-9FaXL98I6XpmUvnoqjy9DCR57H-fa8/edit#slide=id.p3)
+- [Przemysław Biecek: Show me your model]()
 
 ## Podsumowanie
 
