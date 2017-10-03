@@ -11,7 +11,7 @@
 
 - [Paweł Pitera: Logistyka i Supply Chain Management z wykorzystaniem R](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/1.pptx)
 - [Michał Cisek, Rafał Kobiela: Rozpraszanie wielowątkowe na przykładzie analizy transkacji w Retailu](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/2.pdf)
-- [Katarzyna	Lenczewska, Ewelina	Chmura: Wykorzystanie R w rozwiązywaniu problemów biznesowych w branży finansowej]()
+- Katarzyna	Lenczewska, Ewelina	Chmura: Wykorzystanie R w rozwiązywaniu problemów biznesowych w branży finansowej
 
 ## Tidyverse (11:00-12:30)
 
@@ -23,8 +23,8 @@
 
 ## Keynotes (12:30-13:30)
 
-[Wit Jakuczun: R jako główna platforma do zaawansowanej analityki w Enterprise](https://github.com/whyRconf/prezentacje/tree/master/04_keynotes/1.pdf)
-[Artur Suchwałko: Jak dużo mocy (i po co) można wycisnąć z modelu predykcyjnego?](https://github.com/whyRconf/prezentacje/tree/master/04_keynotes/2.pdf)
+- [Wit Jakuczun: R jako główna platforma do zaawansowanej analityki w Enterprise](https://github.com/whyRconf/prezentacje/tree/master/04_keynotes/1.pdf)
+- [Artur Suchwałko: Jak dużo mocy (i po co) można wycisnąć z modelu predykcyjnego?](https://github.com/whyRconf/prezentacje/tree/master/04_keynotes/2.pdf)
 
 ## Modelowanie Ryzyka (UBS) (14:30-16:00)
 
@@ -36,9 +36,9 @@
 
 - [Piotr Wójcik: Modelowanie dynamiki rozkładu w R. Zastosowanie do analizy konwergencji na poziomie lokalnym](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/1.pdf)
 - [Błażej Kochański: Jak więcej wygrać w lotto z R?](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/2.pdf)
-- [Tomasz Melcer: zastępstwo i prezentacja na tablicy na temat funkcji kosztu]
+- Tomasz Melcer: zastępstwo i prezentacja na tablicy na temat funkcji kosztu
 - [Krzysztof Słomczyński: FSelectorRcpp entropy-based feature selection algorithms with sparse matrix support](https://rawgit.com/whyRconf/prezentacje/master/06_Statystyka/4.html)
-- [Łukasz Grala: Analiza sentymentu przy użyciu bibliotek Microsoft]()
+- Łukasz Grala: Analiza sentymentu przy użyciu bibliotek Microsoft
 
 ## Keynotes (16:30-17:30)
 
