@@ -42,16 +42,47 @@
 
 ## Keynotes (16:30-17:30)
 
+- [Małgorzata Bogdan: Statystyczna Analiza 'Grubych' Zbiorów Danych](https://github.com/whyRconf/prezentacje/tree/master/07_keynotes3/1.pdf)
+- [Michał Ramsza: Dezagregacja danych przedziałowych](https://github.com/whyRconf/prezentacje/tree/master/07_keynotes3/2.pdf)
+
 
 # Wykłady dzień II - 29.09.2017
 
+## Keynotes (9:00-10:00)
 
-# Keynotes
+- Maciej Eder: Kim naprawdę był Gall Anonim? Zagadnienia statystycznej analizy tekstu
+- [Justyna Brzezińska: Metody wizualizacji danych jakościowych w programie R](https://github.com/whyRconf/prezentacje/tree/master/08_keynotes3/2.pdf)
+
+## Biostatystyka i Edukacja (10:00-11:30)
+
+- [Krzysztof Stankiewicz: Identyfikacja i analiza barier przeciwko introgresji pomiędzy gatunkami roślin z rodzaju Capsella (Tasznik)](https://github.com/whyRconf/prezentacje/tree/master/09_Biostatystyka_i_Edukacja/1.pdf)
+- [Alicja Gosiewska + Aleksandra Dąbrowska: MLExpResso – NGS, Metylacja, Expresja, R i sporo kawy](https://rawgit.com/whyRconf/prezentacje/master/09_Biostatystyka_i_Edukacja/2/prezentacja_WhyR.html)
+- [Marcin Kosiński: survminer: wykresy analizy przeżycia pełne informacji i elegancji](http://r-addict.com/WhyR2017/#/)
+- [Andrzej Oleś: Podstawy przetwarzania i analizy obrazów w R](https://rawgit.com/whyRconf/prezentacje/master/09_Biostatystyka_i_Edukacja/4.html)
+- [Tomasz Melcer: Projekt R w Google Summer of Code: okiem mentora](https://github.com/whyRconf/prezentacje/tree/master/09_Biostatystyka_i_Edukacja5.pdf)
+
+## Biznes (10:00-11:30)
+
+## Keynotes (12:00-13:00)
 
 - [Anna Wróblewska: Analiza danych obserwacyjnych zwiedzających wystawy w Centrum Nauki Kopernika ](https://docs.google.com/presentation/d/1Lb5YqAGBVuLT-9FaXL98I6XpmUvnoqjy9DCR57H-fa8/edit#slide=id.p3)
-- [Przemysław Biecek: Show me your model]()
+- Przemysław Biecek: Show me your model
 
-## Podsumowanie
+## Sesja sponsorska (14:00-15:00)
+
+- [PwC: ]()
+- [UBS: ]()
+
+## Lightning Talks (15:30-15:60)
+
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+
+## Podsumowanie (17:15-17:30)
 
 - [Marcin Kosiński: Why R? 2017 - podsumowanie](https://github.com/whyRconf/prezentacje/tree/master/podsumowanie/1.pdf)
 - [Michał Burdukiewicz: Why R? 2018 - zapowiedź](https://github.com/whyRconf/prezentacje/tree/master/podsumowanie/2.pdf)

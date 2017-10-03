@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Aleksandra Dąbrowska" />
+  <meta name="author" content="Alicja Gosiewska" />
+  <title>MLExpResso – NGS, Metylacja, Expresja, R i sporo kawy</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="prezentacja_WhyR_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="prezentacja_WhyR_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="custom.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">MLExpResso – NGS, Metylacja, Expresja, R i sporo kawy</h1>
+    <h2 class="author">Aleksandra Dąbrowska</h2>
+    <h2 class="author">Alicja Gosiewska</h2>
+    <h3 class="date">29.09.2017</h3>
+</section>
+
+<section><section id="grupa-mi2-i-mi2-datalab" class="titleslide slide level1" data-background="img/MI2_z_logiem.PNG"><h1>Grupa MI<sup>2</sup> i MI<sup>2</sup> DataLab</h1></section></section>
+<section><section id="mlgensig-machine-learning-methods-for-building-the-integrated-genetic-signatures-ncn-opus-grant-201621bst602176" class="titleslide slide level1"><h1>“MLGenSig: Machine Learning Methods for building the Integrated Genetic Signatures” NCN Opus grant 2016/21/B/ST6/02176</h1></section></section>
+<section><section id="terminologia-biologiczna" class="titleslide slide level1"><h1>Terminologia biologiczna</h1></section><section id="podstawowe-pojecia" class="slide level2" data-background="img/DNA3.PNG">
+<h2>Podstawowe pojęcia</h2>
+<ul>
+<li class="fragment">Gen</li>
+<li class="fragment">Ekspresja genu</li>
+<li class="fragment">Sonda mikromacierzy</li>
+<li class="fragment">Metylacja DNA</li>
+</ul>
+</section></section>
+<section><section id="nazwa" class="titleslide slide level1"><h1>Nazwa</h1></section><section id="section" class="slide level2" data-background="prezentacje_biala_fioletowa/Slajd8.PNG">
+<h2></h2>
+</section><section id="section-1" class="slide level2" data-background="prezentacje_biala_fioletowa/Slajd9.PNG">
+<h2></h2>
+</section><section id="section-2" class="slide level2" data-background="prezentacje_biala_fioletowa/Slajd10.PNG">
+<h2></h2>
+</section><section id="section-3" class="slide level2" data-background="prezentacje_biala_fioletowa/Slajd11.PNG">
+<h2></h2>
+</section><section id="section-4" class="slide level2" data-background="prezentacje_biala_fioletowa/Slajd12.PNG">
+<h2></h2>
+</section></section>
+<section><section id="ekspresja" class="titleslide slide level1"><h1>Ekspresja</h1></section><section id="testowanie" class="slide level2">
+<h2>Testowanie</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BRCA_exp[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</code></pre></div>
+<pre><code>                             SUBTYPE AANAT AARSD1 AATF AATK
+TCGA-A1-A0SB-01A-11R-A144-07  Normal     9   2354 2870  317
+TCGA-A1-A0SD-01A-11R-A115-07    LumA     2   1846 5656  312
+TCGA-A1-A0SE-01A-11R-A084-07    LumA    11   3391 9522  736
+TCGA-A1-A0SF-01A-11R-A144-07    LumA     0   2169 4625  169
+TCGA-A1-A0SG-01A-11R-A144-07    LumA     1   2273 3473   92</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">calculate_test</span>(data, condition, test)</code></pre></div>
+<pre><code>     id log2.fold         pval mean_LumA mean_other     mean
+1 AURKB  2.339920 3.191000e-32  539.0426  2323.8868  1485.01
+2  CBX2  2.895062 2.834335e-26  632.5106  4296.6038  2574.48
+3 KPNA2  1.447288 8.551812e-24  11547.36   26427.38 19433.77
+4 PRR11  3.822148 2.286874e-22   396.383   3479.981  2030.69
+5 BIRC5  1.988998 1.953941e-21  1957.085   6658.358  4448.76
+6  GSG2  1.405039 3.527773e-21  278.2128   629.3396   464.31</code></pre>
+</section><section id="volcano-plot" class="slide level2">
+<h2>Volcano plot</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_volcano</span>(data, line, names, fold_line)</code></pre></div>
+<p><img src="img/volcano1.png" height='400'></p>
+</section></section>
+<section><section id="metylacja" class="titleslide slide level1"><h1>Metylacja</h1></section><section id="agregacja-sond-do-genow" class="slide level2">
+<h2>Agregacja sond do genów</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BRCA_met[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</code></pre></div>
+<pre><code>                             SUBTYPE cg00021527 cg00031162  cg00032227
+TCGA-A1-A0SD-01A-11D-A112-05    LumA 0.03781858  0.7910348 0.006391233
+TCGA-A2-A04N-01A-11D-A112-05    LumA 0.01437552  0.7359370 0.008752293
+TCGA-A2-A04P-01A-31D-A032-05   Basal 0.01360124  0.6967802 0.009442039
+TCGA-A2-A04Q-01A-21D-A032-05   Basal 0.01525656  0.5341244 0.014674247
+TCGA-A2-A04T-01A-21D-A032-05   Basal 0.01167384  0.7378100 0.012251559</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BRCA_met_gen &lt;-<span class="st"> </span><span class="kw">aggregate_probes</span>(data) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BRCA_met_gen[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</code></pre></div>
+<pre><code>                                 AANAT    AARSD1       AATF      AATK
+TCGA-A1-A0SD-01A-11D-A112-05 0.7148533 0.8625816 0.24294092 0.7835302
+TCGA-A2-A04N-01A-11D-A112-05 0.5850106 0.8355825 0.21367129 0.8466190
+TCGA-A2-A04P-01A-31D-A032-05 0.4495537 0.8786166 0.03277413 0.3417919
+TCGA-A2-A04Q-01A-21D-A032-05 0.7120650 0.8819490 0.03460160 0.7264985
+TCGA-A2-A04T-01A-21D-A032-05 0.6010397 0.7739978 0.02501599 0.6276399</code></pre>
+</section><section id="methylation-path" class="slide level2">
+<h2>Methylation path</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_methylation_path</span>(data, condition, gene, show.gene, observ)</code></pre></div>
+<p><img src="img/path1.png" height='400'></p>
+</section><section id="testowanie-1" class="slide level2">
+<h2>Testowanie</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">calculate_test</span>(data, condition, test)</code></pre></div>
+<pre><code>       id   log2.fold         pval mean_LumA mean_other
+1   ICAM2 -0.15151320 3.754116e-17 0.2547275  0.4062407
+2    RILP -0.05073691 2.575168e-13 0.3079069  0.3586438
+3   PIPOX  0.11505558 5.360053e-12 0.4242804  0.3092248
+4 TNFSF12 -0.13412855 5.867083e-12 0.1791401  0.3132686
+5     CD7  0.09822690 1.641919e-11 0.8635077  0.7652808</code></pre>
+</section></section>
+<section><section id="integracja-ekspresji-i-metylacji" class="titleslide slide level1"><h1>Integracja ekspresji i metylacji</h1></section><section id="tabela-porownan" class="slide level2">
+<h2>Tabela porównań</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">comparison &lt;-<span class="st"> </span><span class="kw">calculate_comparison_table</span>(data1, data2, condition1, 
+  condition2, test1, test2)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(comparison)</code></pre></div>
+<pre><code>       id nbinom2.log2.fold nbinom2.pval ttest.log2.fold   ttest.pval geom.mean.rank no.probes
+59  AURKB          2.360714 1.704243e-37    0.0017389592 2.077252e-01   1.881527e-19         2
+102  CBX2          2.905397 5.402147e-31    0.0584687549 1.214043e-06   8.098418e-19         2
+327 KPNA2          1.466181 3.396674e-26    0.0012105971 7.505750e-01   1.596702e-13         1
+277  GSG2          1.426569 3.325659e-25   -0.0018566938 2.411495e-01   2.831926e-13         2
+66  BIRC5          2.004989 9.482155e-24   -0.0005444811 5.330216e-01   2.248153e-12         1
+334 KRT16          4.333332 4.102956e-19    0.0486814033 1.606151e-05   2.567093e-12         2</code></pre>
+</section><section id="volcano-plots" class="slide level2">
+<h2>Volcano plots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_volcanoes</span>(data.m, data.e, 
+               condition.m, condition.e, 
+               gene, test.m, test.e)</code></pre></div>
+<p><img src="img/volcano2.png" height="400"></p>
+</section><section id="informacje-dla-wybranego-genu" class="slide level2">
+<h2>Informacje dla wybranego genu</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_gene</span>(data.m, data.e, 
+               condition.m, condition.e, 
+               gene, show.gene, observ, islands)</code></pre></div>
+<p><img src="img/path2.png" height="400"></p>
+</section><section id="section-5" class="slide level2" data-background="img/pomoce.PNG">
+<h2></h2>
+</section></section>
+<section><section id="co-dalej" class="titleslide slide level1"><h1>Co dalej?</h1></section><section id="github" class="slide level2">
+<h2>GitHub</h2>
+<ul>
+<li class="fragment"><a href="https://github.com/geneticsMiNIng/MLGenSig" class="uri">https://github.com/geneticsMiNIng/MLGenSig</a></li>
+<li class="fragment"><a href="https://github.com/MI2DataLab" class="uri">https://github.com/MI2DataLab</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="prezentacja_WhyR_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="prezentacja_WhyR_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
