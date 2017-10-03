@@ -1,0 +1,19 @@
+---
+layout: slide
+---
+
+{{{ slide.content }}}
+{{{ slide.question.html }}}
+<textarea rows="{{{ slide.rows }}}" style="width:95%" class='submitCompare'
+  placeholder='Wpisz tu swoją odpowiedź (co najmniej 20 znaków)'>
+</textarea>
+<a class='btn btn-success submitCompare'>
+  Zatwierdź i porównaj
+</a>
+<a class='btn btn-danger clearSubmitCompare'>Wyczyść</a>
+
+{{# slide.blocks }}
+<div class='{{class}}' style='display: none;'>
+  {{{ html }}}
+</div>
+{{/ slide.blocks }}

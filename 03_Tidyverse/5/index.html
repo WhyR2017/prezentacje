@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Piękniej!</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Piękniej!">
+  <meta name="author" content="Piotr Sobczyk">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/github.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='1000px' src="assets/img/migracje_2015.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/cropped-szychta_logo_duze.jpg">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Piękniej!</h1>
+    <h2>10 trików w ggplot2</h2>
+    <p>Piotr Sobczyk<br/>szychtawdanych.pl</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="big-background-slide" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Dlaczego warto ,,dopieszczać&quot; wykresy?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><font size="6">Wizualizujemy, żeby wywrzeć wpływ </font></li>
+<li><font size="6">Tworzymy rzeczy piękne </font></li>
+<li><font size="6">Zmiana danych nie oznacza pracy od zera </font></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Od kopciuszka do trochę mniej kopciuszka</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='obrazki/diagnoza_zla_wizualizacja.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Od kopciuszka do trochę mniej kopciuszka</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='obrazki/diagnoza_dobra_wizualizacja.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Od kopciuszka do trochę mniej kopciuszka</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Zamiast wybierać kolory samemu korzystamy z pracy lepszych od nas</p>
+
+<pre><code class="r">library(ggthemes)
+    scale_fill_wsj() +
+    theme_wsj()
+</code></pre>
+
+<pre><code class="r">    scale_fill_fivethirtyeight() +
+    theme_fivethirtyeight()
+</code></pre>
+
+<p>Żeby było białe tło</p>
+
+<pre><code class="r">theme(panel.background = element_rect(fill = &quot;white&quot;),
+      plot.background = element_rect(fill = &quot;white&quot;),
+      legend.background = element_rect(fill = &quot;white&quot;))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Od kopciuszka do trochę mniej kopciuszka</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Nie trzeba formatować danych, żeby frakcje przedstawić jako procenty</p>
+
+<pre><code class="r">scale_y_continuous(labels = scales::percent)
+</code></pre>
+
+<p>Oczywiście to samo tyczy się nie tylko samych etykietek, ale też całej osi</p>
+
+<pre><code class="r">scale_y_log10()
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Od kopciuszka do trochę mniej kopciuszka</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Co jeśli etykietki na osi x na siebie nachodzą?
+Zaproponuję dwa rozwiązania</p>
+
+<pre><code class="r">theme(axis.text.x = element_text(size = 18, face = &quot;plain&quot;, angle = 90)
+</code></pre>
+
+<p>Można też wstawić nowe linie w tekst (wymaga transformacji danych).
+Tutaj w notacji pakietu <em>dplyr</em></p>
+
+<pre><code class="r">dane &lt;- dane %&gt;%
+    mutate(kolumna_dlugie_stringi = stringr::str_wrap(kolumna_dlugie_stringi, 40))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Rysowanie strzałek i tekstów</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='400' src='obrazki/pkb_ludnosc_regiony.jpg' />
+</div>
+
+<p>Co zrobić, żeby nie rozjeżdżały się kąty?</p>
+
+<pre><code class="r">coord_fixed(ratio)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>A jeśli chcemy odwrócić osie?</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='450' src='obrazki/miasta2.gif'/>
+</div>
+
+<pre><code class="r">coord_flip()
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Animacje z ggplot</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(animation)
+
+saveGIF(expr = {
+    for (year0 in seq(2002, 2050, 1)){
+        temp = dane %&gt;% filter(year==year0) 
+        p &lt;- ggplot(temp) +
+            ...
+        plot(p)
+    }
+}, movie.name = &quot;nazwa.gif&quot;, interval=0.2, ani.width=800, ani.height=600)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Przejrzystość wykresu</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='300' src='obrazki/pkb_ppp_2002_2015.png'/>
+</div>
+
+<p>Białe etykiety na tle słupków</p>
+
+<pre><code class="r">geom_label(aes(y=srodek, label = country), color = &quot;white&quot;, size = 7)
+</code></pre>
+
+<p>Przejrzysta czcionka</p>
+
+<pre><code class="r">theme_fivethirtyeight(base_size = 23, base_family = &quot;Helvetica Neue Light&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Emotikony</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='obrazki/ksiegi_emocje_slowa.png'/>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Emotikony</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(emojifont)
+emoji_labels &lt;- data.frame(emotion =  c(&quot;Happiness&quot;, &quot;Sadness&quot;, &quot;Disgust&quot;, &quot;Anger&quot;, &quot;Fear&quot;),
+                          emoji = c(emoji(&quot;smiley&quot;), emoji(&quot;frowning_face&quot;), 
+                              emoji(&quot;unamused&quot;), emoji(&quot;angry&quot;), emoji(&quot;fearful&quot;)),
+                          emoji_name = c((&quot;smiley&quot;), (&quot;frowning_face&quot;), 
+                              (&quot;unamused&quot;), (&quot;angry&quot;), (&quot;fearful&quot;)), stringsAsFactors = FALSE)
+dane %&gt;%
+    inner_join(emoji_labels, by = &quot;emotion&quot;)
+
+plot + 
+    geom_text(aes(x = 13-id, y = 11, label = emoji, color = emotion),
+            family = &quot;EmojiOne&quot;, size = 11, nudge_x = 0.2) +
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Mapy</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='obrazki/konwergencja_89_13.png'/>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Mapy</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Nienakładające się labelki</p>
+
+<pre><code class="r">library(ggrepel)
+plot +
+    geom_label_repel(data = capitalsData, aes(x=LON, y=LAT, 
+        label=ifelse(lag&gt;0, paste0(&quot;+&quot;, lag), lag)))
+</code></pre>
+
+<p>Mapy, a nie wielokąty</p>
+
+<pre><code class="r">plot + 
+    coord_map()
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Mapy</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='500' src='obrazki/migracje_2015.png'/>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="background-slide" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Mapy</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">plot +
+    geom_curve(data = plotData,
+                         mapping = aes(x = LON.x, y = LAT.x, xend = LON.y, yend = LAT.y, 
+                                                    color = continent.x, size = migrants, alpha = migrants),
+                         curvature = 0.5, angle = 90, ncp = 5,
+                         arrow = NULL, lineend = &quot;butt&quot;, na.rm = FALSE, show.legend = NA) +
+    coord_fixed() +
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="thank-you-slide segue nobackground" id="slide-17">
+  <aside class="gdbar right"><img src="assets/img/cropped-szychta_logo_duze.jpg"></aside>
+  <article class="flexbox vleft auto-fadein">
+    <h2>Dziękuję za uwagę</h2>
+    
+  </article>
+
+  <p class="auto-fadein" data-config-contact="">
+    <span>Blog</span><a href="http://szychtawdanych.pl/"><font color="blue"> http://szychtawdanych.pl/</font></a><br>
+    <span>Github</span><a href="https://github.com/psobczyk"><font color="blue"> https://github.com/psobczyk</font></a><br>
+  </p>
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Dlaczego warto ,,dopieszczać&quot; wykresy?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Od kopciuszka do trochę mniej kopciuszka'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Od kopciuszka do trochę mniej kopciuszka'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Od kopciuszka do trochę mniej kopciuszka'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Od kopciuszka do trochę mniej kopciuszka'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Od kopciuszka do trochę mniej kopciuszka'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Rysowanie strzałek i tekstów'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='A jeśli chcemy odwrócić osie?'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Animacje z ggplot'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Przejrzystość wykresu'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Emotikony'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Emotikony'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Mapy'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Mapy'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Mapy'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Mapy'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Dziękuję za uwagę'>
+         17
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
