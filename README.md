@@ -63,6 +63,12 @@
 
 ## Biznes (10:00-11:30)
 
+-
+-
+-
+-
+-
+
 ## Keynotes (12:00-13:00)
 
 - [Anna Wróblewska: Analiza danych obserwacyjnych zwiedzających wystawy w Centrum Nauki Kopernika ](https://docs.google.com/presentation/d/1Lb5YqAGBVuLT-9FaXL98I6XpmUvnoqjy9DCR57H-fa8/edit#slide=id.p3)
