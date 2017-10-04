@@ -63,7 +63,7 @@
 
 ## Biznes (10:00-11:30)
 
-- Mikołaj Olszewski + Mikołaj Bogucki: Wyzwania stawiane przez technologie open source w biznesie
+- [Mikołaj Olszewski + Mikołaj Bogucki: Wyzwania stawiane przez technologie open source w biznesie](https://rawgit.com/whyRconf/prezentacje/master/10_Biznes/1.html)
 - [Anna Skrzydło: Kiedy data.frame pożera Workfile, czyli o tym jak przeprowadzamy stadko ekonometryków z klikania w EViewsie do pisania w R](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/2.pdf)
 - [Tomasz Żółtak: Czy R (kiedyś) zastąpi SPSS?](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/3.pdf)
 - [Krzysztof Jędrzejewski + Emilia Pankowska: R a dane w chmurze AWS](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/4.pdf)
