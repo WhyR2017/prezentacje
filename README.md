@@ -11,7 +11,7 @@
 
 - [Paweł Pitera: Logistyka i Supply Chain Management z wykorzystaniem R](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/1.pptx)
 - [Michał Cisek, Rafał Kobiela: Rozpraszanie wielowątkowe na przykładzie analizy transkacji w Retailu](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/2.pdf)
-- Katarzyna	Lenczewska, Ewelina	Chmura: Wykorzystanie R w rozwiązywaniu problemów biznesowych w branży finansowej
+- [Katarzyna	Lenczewska, Ewelina	Chmura: Wykorzystanie R w rozwiązywaniu problemów biznesowych w branży finansowej](https://github.com/whyRconf/prezentacje/tree/master/02_PwC_Data_Analytics/3.pptx)
 
 ## Tidyverse (11:00-12:30)
 
@@ -38,7 +38,7 @@
 - [Błażej Kochański: Jak więcej wygrać w lotto z R?](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/2.pdf)
 - Tomasz Melcer: zastępstwo i prezentacja na tablicy na temat funkcji kosztu
 - [Krzysztof Słomczyński: FSelectorRcpp entropy-based feature selection algorithms with sparse matrix support](https://rawgit.com/whyRconf/prezentacje/master/06_Statystyka/4.html)
-- Łukasz Grala: Analiza sentymentu przy użyciu bibliotek Microsoft
+- [Łukasz Grala: Analiza sentymentu przy użyciu bibliotek Microsoft](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/5.pdf)
 
 ## Keynotes (16:30-17:30)
 
@@ -59,34 +59,34 @@
 - [Alicja Gosiewska + Aleksandra Dąbrowska: MLExpResso – NGS, Metylacja, Expresja, R i sporo kawy](https://rawgit.com/whyRconf/prezentacje/master/09_Biostatystyka_i_Edukacja/2/prezentacja_WhyR.html)
 - [Marcin Kosiński: survminer: wykresy analizy przeżycia pełne informacji i elegancji](http://r-addict.com/WhyR2017/#/)
 - [Andrzej Oleś: Podstawy przetwarzania i analizy obrazów w R](https://rawgit.com/whyRconf/prezentacje/master/09_Biostatystyka_i_Edukacja/4.html)
-- [Tomasz Melcer: Projekt R w Google Summer of Code: okiem mentora](https://github.com/whyRconf/prezentacje/tree/master/09_Biostatystyka_i_Edukacja5.pdf)
+- [Tomasz Melcer: Projekt R w Google Summer of Code: okiem mentora](https://github.com/whyRconf/prezentacje/tree/master/09_Biostatystyka_i_Edukacja/5.pdf)
 
 ## Biznes (10:00-11:30)
 
--
--
--
--
--
+- Mikołaj Olszewski + Mikołaj Bogucki: Wyzwania stawiane przez technologie open source w biznesie
+- [Anna Skrzydło: Kiedy data.frame pożera Workfile, czyli o tym jak przeprowadzamy stadko ekonometryków z klikania w EViewsie do pisania w R](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/2.pdf)
+- [Tomasz Żółtak: Czy R (kiedyś) zastąpi SPSS?](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/3.pdf)
+- [Krzysztof Jędrzejewski + Emilia Pankowska: R a dane w chmurze AWS](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/4.pdf)
+- [Vasyl Martsenyu: Podejmowanie decyzji w R - w warunkach pewno´sci, ryzyko oraz niepewno´sci](https://github.com/whyRconf/prezentacje/tree/master/10_Biznes/5.pdf)
 
 ## Keynotes (12:00-13:00)
 
 - [Anna Wróblewska: Analiza danych obserwacyjnych zwiedzających wystawy w Centrum Nauki Kopernika ](https://docs.google.com/presentation/d/1Lb5YqAGBVuLT-9FaXL98I6XpmUvnoqjy9DCR57H-fa8/edit#slide=id.p3)
-- Przemysław Biecek: Show me your model
+- [Przemysław Biecek: Show me your model](https://github.com/whyRconf/prezentacje/tree/master/11_keynotes5/2.pdf)
 
 ## Sesja sponsorska (14:00-15:00)
 
-- [PwC: ]()
-- [UBS: ]()
+- [Paweł Marcinkowski: We build trust in society and solve important problems](https://github.com/whyRconf/prezentacje/tree/master/12_sponsorzy/1.pdf)
+- UBS
 
-## Lightning Talks (15:30-15:60)
+## Lightning Talks (15:30-16:00)
 
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
+- [Mateusz Otmianowski: Uprzyjemnij sobie generowanie wielu wykresów za pomocą purrr]
+- [Damian Chmura: Lasy z inwazyjnym dębem czerwonym w świetle analiz wielowymiarowych przy użyciu R](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/2.pdf)
+- [Bartosz Czernecki: FasteR - kiedy warto przenieść obliczenia na superkomputery?](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/3.pdf)
+- [Wiktor	Zdzienicki: Spark+R - wydajne	obliczenia w chmurze](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/4.pdf)
+- [Kacper Łodzikowski: What drumming taught me about leading data science teams](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/5.pdf)
+- [Mateusz Staniak: Zawód rodzica a edukacja dziecka - wizualicja wyników badań PISA](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/6.pdf)
 
 ## Podsumowanie (17:15-17:30)
 
