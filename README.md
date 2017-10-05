@@ -81,7 +81,7 @@
 
 ## Lightning Talks (15:30-16:00)
 
-- [Mateusz Otmianowski: Uprzyjemnij sobie generowanie wielu wykresów za pomocą purrr]
+- [Mateusz Otmianowski: Uprzyjemnij sobie generowanie wielu wykresów za pomocą purrr]https://rawgit.com/whyRconf/prezentacje/master/13_Lightning_Talks/1.html
 - [Damian Chmura: Lasy z inwazyjnym dębem czerwonym w świetle analiz wielowymiarowych przy użyciu R](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/2.pdf)
 - [Bartosz Czernecki: FasteR - kiedy warto przenieść obliczenia na superkomputery?](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/3.pdf)
 - [Wiktor	Zdzienicki: Spark+R - wydajne	obliczenia w chmurze](https://github.com/whyRconf/prezentacje/tree/master/13_Lightning_Talks/4.pdf)
