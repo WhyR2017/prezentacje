@@ -35,7 +35,7 @@
 ## Statystyka (14:30-16:00)
 
 - [Piotr Wójcik: Modelowanie dynamiki rozkładu w R. Zastosowanie do analizy konwergencji na poziomie lokalnym](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/1.pdf)
-- Marcin K. Dydersk: Relacje między lasem a klimatem w różnych skalach przestrzennych – jak to ugRyźć?
+- [Marcin K. Dydersk: Relacje między lasem a klimatem w różnych skalach przestrzennych – jak to ugRyźć?](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/2.pdf)
 - Tomasz Melcer: zastępstwo i prezentacja na tablicy na temat funkcji kosztu
 - [Krzysztof Słomczyński: FSelectorRcpp entropy-based feature selection algorithms with sparse matrix support](https://rawgit.com/whyRconf/prezentacje/master/06_Statystyka/4.html)
 - [Łukasz Grala: Analiza sentymentu przy użyciu bibliotek Microsoft](https://github.com/whyRconf/prezentacje/tree/master/06_Statystyka/5.pdf)
