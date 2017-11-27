@@ -50,7 +50,7 @@
 
 ## Keynotes (9:00-10:00)
 
-- [Maciej Eder: Kim naprawdę był Gall Anonim? Zagadnienia statystycznej analizy tekstu](https://github.com/whyRconf/prezentacje/tree/master/08_keynotes4/2.pdf)
+- [Maciej Eder: Kim naprawdę był Gall Anonim? Zagadnienia statystycznej analizy tekstu](https://github.com/whyRconf/prezentacje/tree/master/08_keynotes4/1.pdf)
 - [Justyna Brzezińska: Metody wizualizacji danych jakościowych w programie R](https://github.com/whyRconf/prezentacje/tree/master/08_keynotes4/2.pdf)
 
 ## Biostatystyka i Edukacja (10:00-11:30)
